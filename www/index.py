@@ -6,7 +6,6 @@ from flask_restplus import Resource, Api, fields
 
 PATH_TO_TEMPLATES = "./tpl/"
 
-# app = Flask(__name__, template_folder=PATH_TO_TEMPLATES)
 app = Flask(__name__)
 
 
