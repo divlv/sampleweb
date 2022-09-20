@@ -4,3 +4,4 @@ flask-restful
 flask-cors
 Werkzeug==0.16.1
 flask-restplus
+markupsafe==2.0.1
