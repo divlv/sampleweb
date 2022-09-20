@@ -6,5 +6,8 @@ COPY ./requirements.txt /app/requirements.txt
 # "-p" - create all chain with parent dirs, if any
 RUN mkdir -p /cache
 WORKDIR /app
+
+RUN sed -i "s/^\([[:space:]]*\)app.run/\n\1# GUnicorn will start APP by itself:\n\1return app\n\1# app.run/g" -i /app/index.py
+
 RUN pip install -r requirements.txt
 CMD ["gunicorn", "-w 2", "-b 0.0.0.0:80", "index:app"]
